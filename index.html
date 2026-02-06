@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>GIFTS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: "#8a9a5b", // Sage Green
+            "primary-dark": "#728961",
+            "background-light": "#FFFDD0", // Cream White
+            "background-dark": "#1d2210",
+            surface: "#ffffff",
+            "text-main": "#2c2c2a",
+            sage: "#758961",
+            "sage-light": "#e3e9de"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "Noto Sans SC", "sans-serif"],
+            display: ["Noto Sans SC", "sans-serif"],
+          },
+          spacing: {
+            'safe-top': 'env(safe-area-inset-top, 24px)',
+            'safe-bottom': 'env(safe-area-inset-bottom, 24px)',
+          },
+          boxShadow: {
+            soft: "0 20px 40px -15px rgba(0, 0, 0, 0.1)",
+            card: "0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)"
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      /* Prevent bounce on mobile */
+      overscroll-behavior-y: none;
+      background-color: #1d2210;
+      /* Match dark theme bg to prevent white flashes */
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    .paper-texture {
+      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBlUBZf7Hy-p6QRWCKRZbfHSs6kbyOxjRbbUAtIUWeMTCHydgDI8qEXEWK4bORw5kQ58PPD7-0lQvQe8ucavKPuPiyjvib_hFQo1AJTpCW3QLcBel-2ymgI_TTQK_PEs0Mt2lQ1H0619SLcWZXv84JjVwLJw6AUUT1aeh1t289610aRFRWmFq75tY2BXp5p0D4I69PhGMjrJafivFwZY0X0fgD8-rnR_M59Aud9PMFlAGy8p0h5FuU6teOwnPCOYPCboaEbSplrNno');
+      mix-blend-mode: multiply;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
