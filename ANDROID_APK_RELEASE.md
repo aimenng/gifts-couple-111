@@ -14,7 +14,7 @@
 仓库已提供脚本：
 
 ```bash
-./scripts/build-android-apk.sh
+npm run android:apk
 ```
 
 脚本会自动执行：
@@ -30,7 +30,14 @@
 > 国内网络如无法访问 npm 官方源，可使用：
 
 ```bash
-USE_NPM_MIRROR=1 ./scripts/build-android-apk.sh
+USE_NPM_MIRROR=1 npm run android:apk
+```
+
+
+### 2.1 直接构建 Release APK
+
+```bash
+npm run android:apk:release
 ```
 
 ## 3. Release 签名（必须）
@@ -46,6 +53,22 @@ keytool -genkeypair -v -keystore gifts-release.keystore -alias gifts -keyalg RSA
 - 选择 APK
 - 选择上述 keystore
 - 生成 signed release APK
+
+
+### 3.1 可选：命令行自动签名
+
+脚本支持读取以下环境变量自动签名：
+
+- `ANDROID_KEYSTORE_PATH`
+- `ANDROID_KEY_ALIAS`
+- `ANDROID_KEYSTORE_PASSWORD`
+- `ANDROID_KEY_PASSWORD`
+
+示例：
+
+```bash
+ANDROID_KEYSTORE_PATH=/path/gifts-release.keystore ANDROID_KEY_ALIAS=gifts ANDROID_KEYSTORE_PASSWORD=*** ANDROID_KEY_PASSWORD=*** npm run android:apk:release
+```
 
 ## 4. 小米/华为等机型适配要点
 
@@ -76,7 +99,25 @@ keytool -genkeypair -v -keystore gifts-release.keystore -alias gifts -keyalg RSA
 - Google Play：优先上传 AAB；APK 用于内测分发。
 - 在每次发版时记录：版本号、构建时间、commit hash、测试机型列表。
 
-## 6. 常见问题
+
+## 6. 安装到小米/华为等手机
+
+```bash
+npm run android:install -- debug
+```
+
+若要安装 release 包：
+
+```bash
+npm run android:install -- release
+```
+
+安装前请确认：
+- 已开启开发者模式和 USB 调试
+- 已在手机弹窗中允许当前电脑调试授权
+- 小米/华为系统中已允许 USB 安装或未知来源安装
+
+## 7. 常见问题
 
 ### Q1: `npm i` 拉不到 `@capacitor/*`
 可能是网络或镜像策略限制。先尝试：

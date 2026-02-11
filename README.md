@@ -73,13 +73,13 @@ npm run cap:open:ios
 ## 5. Android APK 一键打包（可安装到手机）
 
 ```bash
-./scripts/build-android-apk.sh
+npm run android:apk
 ```
 
 如果你在国内网络环境遇到 npm 源访问问题：
 
 ```bash
-USE_NPM_MIRROR=1 ./scripts/build-android-apk.sh
+USE_NPM_MIRROR=1 npm run android:apk
 ```
 
 APK 产物默认输出：
@@ -87,3 +87,22 @@ APK 产物默认输出：
 - `android/app/build/outputs/apk/release/app-release-unsigned.apk`
 
 > 完整流程和小米/华为适配建议请看：`ANDROID_APK_RELEASE.md`。
+
+
+### 5.1 构建 Release APK（用于分发）
+
+```bash
+npm run android:apk:release
+```
+
+### 5.2 USB 直装到手机（小米/华为等）
+
+```bash
+npm run android:install -- debug
+```
+
+如果要安装 release 包：
+
+```bash
+npm run android:install -- release
+```
