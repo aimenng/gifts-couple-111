@@ -11,8 +11,16 @@
     "migrate:images": "node backend/scripts/migrateInlineMemoriesToStorage.js",
     "start:backend": "node backend/src/index.js",
     "build": "vite build",
+    "build:app": "vite build && npx cap sync",
     "preview": "vite preview",
-    "check:text-encoding": "node scripts/check-text-encoding.mjs"
+    "check:text-encoding": "node scripts/check-text-encoding.mjs",
+    "cap:sync": "npx cap sync",
+    "cap:open:android": "npx cap open android",
+    "cap:open:ios": "npx cap open ios",
+    "android:apk": "bash ./scripts/build-android-apk.sh",
+    "android:sync": "npx cap sync android",
+    "android:apk:release": "bash ./scripts/build-android-apk.sh release",
+    "android:install": "bash ./scripts/android-install.sh"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.95.3",
