@@ -16,7 +16,9 @@
     "check:text-encoding": "node scripts/check-text-encoding.mjs",
     "cap:sync": "npx cap sync",
     "cap:open:android": "npx cap open android",
-    "cap:open:ios": "npx cap open ios"
+    "cap:open:ios": "npx cap open ios",
+    "android:apk": "bash ./scripts/build-android-apk.sh",
+    "android:sync": "npx cap sync android"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.95.3",

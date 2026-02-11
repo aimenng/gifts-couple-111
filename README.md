@@ -68,3 +68,22 @@ npm run cap:open:ios
 - PWA 安装提示
 
 建议发布前至少在 320/360/375/390/414 宽度实机检查。
+
+
+## 5. Android APK 一键打包（可安装到手机）
+
+```bash
+./scripts/build-android-apk.sh
+```
+
+如果你在国内网络环境遇到 npm 源访问问题：
+
+```bash
+USE_NPM_MIRROR=1 ./scripts/build-android-apk.sh
+```
+
+APK 产物默认输出：
+- `android/app/build/outputs/apk/debug/app-debug.apk`
+- `android/app/build/outputs/apk/release/app-release-unsigned.apk`
+
+> 完整流程和小米/华为适配建议请看：`ANDROID_APK_RELEASE.md`。
