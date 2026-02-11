@@ -2,19 +2,69 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# GIFTS Couple Connection
 
-This contains everything you need to run your app locally.
+情侣关系记录与专注陪伴应用，当前支持：
+- Web（开发与部署）
+- PWA（可安装到手机桌面）
+- Capacitor 原生壳（Android / iOS）
 
-View your app in AI Studio: https://ai.studio/apps/temp/1
+## 1. 本地开发
 
-## Run Locally
+**Prerequisites:** Node.js 20+
 
-**Prerequisites:**  Node.js
+1. 安装依赖
+   ```bash
+   npm install
+   ```
+2. 配置环境变量（创建 `.env.local`）
+   ```env
+   GEMINI_API_KEY=your_gemini_api_key
+   VITE_API_BASE_URL=http://localhost:8787/api
+   ```
+3. 启动前后端
+   ```bash
+   npm run dev:full
+   ```
 
+## 2. 打包 Web/PWA
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm run build
+```
+
+构建产物在 `dist/`，并包含 PWA manifest 与 service worker。
+
+## 3. 打包成手机 App（Capacitor）
+
+### 3.1 初始化原生工程（首次）
+
+```bash
+npx cap add android
+npx cap add ios
+```
+
+### 3.2 每次代码更新后同步
+
+```bash
+npm run build:app
+```
+
+### 3.3 打开原生 IDE
+
+```bash
+npm run cap:open:android
+npm run cap:open:ios
+```
+
+在 Android Studio / Xcode 内完成签名、打包、上架。
+
+## 4. 手机适配说明
+
+项目已启用：
+- `viewport-fit=cover`（刘海屏支持）
+- Safe area 间距（顶部/底部）
+- 底部主导航固定布局
+- PWA 安装提示
+
+建议发布前至少在 320/360/375/390/414 宽度实机检查。

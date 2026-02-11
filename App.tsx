@@ -14,6 +14,7 @@ import { AppProvider } from './context';
 import { AuthProvider } from './authContext';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { ToastProvider } from './components/Toast';
+import { PwaInstallHint } from './components/PwaInstallHint';
 import { syncTime } from './utils/timeService';
 import { cleanupLegacyLocalDataOnce } from './utils/cloudStorageCleanup';
 
@@ -91,6 +92,7 @@ const AppContent: React.FC = () => {
         {renderView()}
       </div>
       {showNav && <BottomNav currentView={currentView} onChangeView={navigateTo} />}
+      <PwaInstallHint />
     </Layout>
   );
 };

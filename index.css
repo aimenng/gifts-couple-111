@@ -15,10 +15,17 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body,
+#root {
+  height: 100%;
+}
+
 body {
   line-height: 1.5;
   -webkit-tap-highlight-color: transparent;
   font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+  overscroll-behavior-y: none;
 }
 
 img,
@@ -389,6 +396,12 @@ button:active, [role="button"]:active {
 
 .safe-bottom {
   padding-bottom: env(safe-area-inset-bottom, 24px);
+}
+
+@media (display-mode: standalone) {
+  body {
+    user-select: none;
+  }
 }
 
 /* ========================================

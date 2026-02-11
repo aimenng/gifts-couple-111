@@ -1,0 +1,17 @@
+{
+  "name": "GIFTS Couple Connection",
+  "short_name": "GIFTS",
+  "description": "情侣关系记录与专注陪伴应用",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1d2210",
+  "theme_color": "#8a9a5b",
+  "icons": [
+    {
+      "src": "/icons/app-icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
